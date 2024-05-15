@@ -6,6 +6,7 @@ import UploadImage from "@/components/UI/UploadImage.vue";
 import {useAuthStore} from "@/store/AuthStore.js";
 import Statistic from "@/components/Statistic/Statistic.vue";
 import InfiniteLoading from "v3-infinite-loading";
+import api from "../../api/api.js";
 
 const postStore = usePostStore()
 const authStore = useAuthStore();
@@ -39,6 +40,7 @@ const storePost = async () => {
 }
 onMounted(async () => {
     await postStore.getAll();
+   const res = await api.get('/api/test')
 })
 
 const loadData = async ($state) => {

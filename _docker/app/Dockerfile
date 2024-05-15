@@ -12,7 +12,12 @@ RUN apk update && apk add --no-cache \
     bash \
     tidyhtml-dev \
     imagemagick-dev \
+    freetype-dev \
+    jpeg-dev \
     && docker-php-ext-install pdo pdo_mysql pcntl gd zip
+
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg
+RUN docker-php-ext-install gd
 
 RUN docker-php-ext-configure intl && docker-php-ext-install intl
 

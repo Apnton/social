@@ -43,10 +43,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-Route::get('test', function (\Illuminate\Http\Request $request) {
-    dd($request->all());
 
-});
 
 
 
